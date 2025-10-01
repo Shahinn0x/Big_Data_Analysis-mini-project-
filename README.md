@@ -1,90 +1,88 @@
 # Movie Recommendation System
 
-This project is a movie recommendation system built with Streamlit and powered by a machine learning model. It recommends movies based on a selected title using cosine similarity and displays movie posters fetched from the TMDB API.
->YouTube tutorial [HERE](https://youtu.be/i-B_I2DGIAI)
+A simple Movie Recommendation System built with **Python**, **Streamlit**, and **TMDB dataset**.  
+This app recommends movies similar to your chosen movie based on content similarity.
 
->Dataset is [HERE](https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata)
+---
 
->Some files are not available on GitHub due to the large file size. you can get it [HERE](https://huggingface.co/sujoy0011/Movie-Recommendation-System/tree/main)
+## 🚀 Features
+- Search for any movie in the dataset
+- Get a list of top 5 recommended movies
+- Interactive and easy-to-use **Streamlit web interface**
 
-## Table of Contents
+---
 
-- [Overview](#overview)
-- [Theory of Recommendation Systems](#theory-of-recommendation-systems)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Dataset](#dataset)
-- [Model](#model)
-- [Results](#results)
-- [Contributing](#contributing)
-- [License](#license)
+## 🛠 Technology Stack
+- Python 3.x
+- Streamlit
+- Pandas
+- Scikit-learn (`CountVectorizer`, `cosine_similarity`)
+- TMDB 5000 Movie Dataset
 
-## Overview
+---
 
-The movie recommendation system helps users discover movies similar to their favorites. By selecting a movie from the list, users receive a list of top 10 recommended movies along with their posters. This project leverages machine learning techniques to analyze the features of movies and find similarities between them. It uses the TMDB API to fetch and display movie posters, enhancing the user experience by providing visual context for the recommendations. The system is built with Streamlit, providing an interactive and user-friendly interface for users to explore movie recommendations easily.
+## 📂 Project Structure
 
-## Theory of Recommendation Systems
+Movie-Recommendation-System/
+│
+├─ app.py # Streamlit app
+├─ prepare_data.py # Preprocessing and generating movie_data.pkl
+├─ tmdb_5000_movies.csv # Original dataset (not pushed to GitHub)
+├─ tmdb_5000_credits.csv # Original dataset (not pushed to GitHub)
+├─ movie_data.pkl # Pickle file (ignored in GitHub)
+├─ requirements.txt # Python dependencies
+└─ README.md
 
-### What is a Recommendation System?
+---
 
-A recommendation system is a subclass of information filtering systems that seek to predict the rating or preference a user would give to an item. They are widely used in various applications like movie recommendations, product recommendations, and content recommendations.
+## ⚡ How to Run Locally
 
-### Types of Recommendation Systems
+1. **Clone the repo**
+```bash
+git clone https://github.com/YourUsername/Movie-Recommendation-System.git
+cd Movie-Recommendation-System
 
-1. **Content-Based Filtering**: This method recommends items similar to those a user liked in the past. It relies on the attributes of the items and a profile of the user's preferences.
+Install dependencies
+<img width="798" height="99" alt="image" src="https://github.com/user-attachments/assets/82ac5e20-f3fe-4d5d-8b4a-a834fb2f15b7" />
 
-2. **Collaborative Filtering**: This method recommends items based on the preferences of similar users. It doesn't require the attributes of the items and instead focuses on user-item interactions.
+Download TMDB dataset
 
-3. **Hybrid Methods**: These methods combine content-based and collaborative filtering to provide more accurate recommendations.
-   
-    ![The-recommendation-system-types](https://github.com/user-attachments/assets/b08f4f84-9210-4dfb-9734-860b353a3da7)
+Download tmdb_5000_movies.csv and tmdb_5000_credits.csv from Kaggle
 
-### Cosine Similarity
+Place the CSVs in the project root folder.
 
-In this project, we use cosine similarity to measure the similarity between movie titles. Cosine similarity is a metric used to measure how similar two vectors are. It is calculated as the cosine of the angle between two vectors projected in a multi-dimensional space. For movie recommendation, the vectors represent movie features, and the similarity score indicates how alike two movies are.
+Generate the pickle file
+<img width="815" height="82" alt="image" src="https://github.com/user-attachments/assets/88f6b0b2-dac1-489b-900c-5a8a881fc6d4" />
 
-## Installation
+Run the Streamlit app
+<img width="808" height="94" alt="image" src="https://github.com/user-attachments/assets/3ba05526-5d4d-4ca9-b757-5647ae4785b3" />
+📝 Notes
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/your-username/movie-recommendation-system.git
-    cd movie-recommendation-system
-    ```
+movie_data.pkl is not included in the GitHub repo due to size restrictions (>100MB).
 
-2. Install the required packages:
-    ```bash
-    pip install -r requirements.txt
-    ```
+You can regenerate it anytime using prepare_data.py.
 
-## Usage
+🔗 References
 
-1. Run the Streamlit app:
-    ```bash
-    streamlit run app.py
-    ```
+TMDB 5000 Movie Dataset
 
-2. Open your web browser and go to `http://localhost:8501`.
+Streamlit documentation: https://docs.streamlit.io/
 
-3. Select a movie from the dropdown list and click "Recommend" to get the top 10 recommended movies along with their posters.
+📌 License
 
-## Dataset
+This project is open-source and available under the MIT License.
 
-The dataset used for this project contains information about movies, including their titles and IDs. It is processed and stored in `movie_data.pkl`. The dataset is used to calculate the cosine similarity between movies.
 
-## Model
+---
 
-The model for recommending movies is based on cosine similarity. Cosine similarity is used to measure the similarity between movie titles. The model computes the similarity scores and suggests the top 10 similar movies based on the selected movie title.
+### ✅ Optional Extras
+- Add a screenshot of the Streamlit app at the top.
+- Add a **GIF demo** of your app if you want it to look more professional.  
+- Update `requirements.txt` with the exact versions of `pandas`, `scikit-learn`, `streamlit`, etc.  
 
-## Results
+---
 
-The system provides the top 10 recommended movies for any selected movie title. It also fetches and displays the posters of these recommended movies using the TMDB API.
+If you want, I can also **write a ready-to-use `requirements.txt`** for this project so anyone can run it without errors. Do you want me to do that?
 
-![Screenshot 2024-07-12 103743](https://github.com/user-attachments/assets/fbc357a1-a6e6-472a-892b-95fe96767743)
 
-## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
