@@ -1,0 +1,20 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Data files
+*.pkl
+*.csv
+*.json
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
